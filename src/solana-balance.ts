@@ -41,7 +41,11 @@ export class SolanaBalanceMonitor {
 
   async checkBalance(): Promise<SolanaBalanceInfo> {
     const now = Date.now();
-    if (this.cachedBalance !== null && this.cachedBalance > 0n && now - this.cachedAt < CACHE_TTL_MS) {
+    if (
+      this.cachedBalance !== null &&
+      this.cachedBalance > 0n &&
+      now - this.cachedAt < CACHE_TTL_MS
+    ) {
       return this.buildInfo(this.cachedBalance);
     }
     // Zero balance is never cached — always re-fetch so a funded wallet is

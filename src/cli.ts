@@ -14,7 +14,12 @@
  */
 
 import { startProxy, getProxyPort } from "./proxy.js";
-import { resolveOrGenerateWalletKey, resolvePaymentChain, recoverWalletFromMnemonic, savePaymentChain } from "./auth.js";
+import {
+  resolveOrGenerateWalletKey,
+  resolvePaymentChain,
+  recoverWalletFromMnemonic,
+  savePaymentChain,
+} from "./auth.js";
 import { getSolanaAddress } from "./wallet.js";
 import { generateReport } from "./report.js";
 import { VERSION } from "./version.js";

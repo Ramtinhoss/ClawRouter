@@ -1178,8 +1178,12 @@ export async function startProxy(options: ProxyOptions): Promise<ProxyHandle> {
     options.apiBase ??
     (paymentChain === "solana" && solanaPrivateKeyBytes ? BLOCKRUN_SOLANA_API : BLOCKRUN_API);
   if (paymentChain === "solana" && !solanaPrivateKeyBytes) {
-    console.warn(`[ClawRouter] ⚠ Payment chain is Solana but no mnemonic found — falling back to Base (EVM).`);
-    console.warn(`[ClawRouter]   To fix: run "npx @blockrun/clawrouter wallet recover" if your mnemonic exists,`);
+    console.warn(
+      `[ClawRouter] ⚠ Payment chain is Solana but no mnemonic found — falling back to Base (EVM).`,
+    );
+    console.warn(
+      `[ClawRouter]   To fix: run "npx @blockrun/clawrouter wallet recover" if your mnemonic exists,`,
+    );
     console.warn(`[ClawRouter]   or run "npx @blockrun/clawrouter chain base" to switch to EVM.`);
   } else if (paymentChain === "solana") {
     console.log(`[ClawRouter] Payment chain: Solana (${BLOCKRUN_SOLANA_API})`);
@@ -1773,7 +1777,10 @@ async function tryModelRequest(
     const contentType = response.headers.get("content-type") || "";
     if (contentType.includes("json") || contentType.includes("text")) {
       try {
-        const clonedChunks = await readBodyWithTimeout(response.clone().body, ERROR_BODY_READ_TIMEOUT_MS);
+        const clonedChunks = await readBodyWithTimeout(
+          response.clone().body,
+          ERROR_BODY_READ_TIMEOUT_MS,
+        );
         const responseBody = Buffer.concat(clonedChunks).toString();
         const degradedReason = detectDegradedSuccessResponse(responseBody);
         if (degradedReason) {

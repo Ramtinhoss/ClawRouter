@@ -89,7 +89,11 @@ export class BalanceMonitor {
     // Use cache only when balance is positive and still fresh.
     // Zero balance is never cached — always re-fetch so a funded wallet is
     // detected on the next request without waiting for cache expiry.
-    if (this.cachedBalance !== null && this.cachedBalance > 0n && now - this.cachedAt < CACHE_TTL_MS) {
+    if (
+      this.cachedBalance !== null &&
+      this.cachedBalance > 0n &&
+      now - this.cachedAt < CACHE_TTL_MS
+    ) {
       return this.buildInfo(this.cachedBalance);
     }
 

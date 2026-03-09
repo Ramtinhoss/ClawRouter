@@ -330,17 +330,17 @@ npm test
 
 ## 📚 More Resources
 
-| Resource                                          | Description              |
-| ------------------------------------------------- | ------------------------ |
-| [Documentation](https://blockrun.ai/docs)         | Full docs                |
-| [Model Pricing](https://blockrun.ai/models)       | All models & prices      |
-| [Image Generation](docs/image-generation.md)      | API examples, 5 models   |
-| [Routing Profiles](docs/routing-profiles.md)      | ECO/AUTO/PREMIUM details |
-| [Architecture](docs/architecture.md)              | Technical deep dive      |
-| [Configuration](docs/configuration.md)            | Environment variables    |
-| [vs OpenRouter](docs/vs-openrouter.md)            | Why ClawRouter wins      |
-| [Features](docs/features.md)                      | All features             |
-| [Troubleshooting](docs/troubleshooting.md)        | Common issues            |
+| Resource                                     | Description              |
+| -------------------------------------------- | ------------------------ |
+| [Documentation](https://blockrun.ai/docs)    | Full docs                |
+| [Model Pricing](https://blockrun.ai/models)  | All models & prices      |
+| [Image Generation](docs/image-generation.md) | API examples, 5 models   |
+| [Routing Profiles](docs/routing-profiles.md) | ECO/AUTO/PREMIUM details |
+| [Architecture](docs/architecture.md)         | Technical deep dive      |
+| [Configuration](docs/configuration.md)       | Environment variables    |
+| [vs OpenRouter](docs/vs-openrouter.md)       | Why ClawRouter wins      |
+| [Features](docs/features.md)                 | All features             |
+| [Troubleshooting](docs/troubleshooting.md)   | Common issues            |
 
 ---
 

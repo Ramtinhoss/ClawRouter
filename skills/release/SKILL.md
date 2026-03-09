@@ -37,6 +37,7 @@ Open `CHANGELOG.md`. Add a new section at the top (after the header) in this for
 ```
 
 Rules:
+
 - Date format: `Mar 8, 2026`
 - One bullet per logical change
 - Every bullet must be present — no "see git log"
@@ -51,11 +52,13 @@ Rules:
 File: `/Users/vickyfu/Documents/blockrun-web/blockrun/src/app/api/v1/chat/completions/route.ts`
 
 Find this line:
+
 ```typescript
 const CURRENT_CLAWROUTER_VERSION = "x.y.z";
 ```
 
 Update it to match the new version. Verify with:
+
 ```bash
 grep CURRENT_CLAWROUTER_VERSION /Users/vickyfu/Documents/blockrun-web/blockrun/src/app/api/v1/chat/completions/route.ts
 ```
@@ -172,11 +175,11 @@ All 6 must match the new version. If any mismatch, fix before declaring the rele
 
 ## Common Mistakes (Never Repeat These)
 
-| Mistake | Prevention |
-|---------|-----------|
-| Forgot to update `CURRENT_CLAWROUTER_VERSION` in blockrun | Step 4 — always check |
-| CHANGELOG entry missing or incomplete | Step 3 — write it before building |
-| npm publish before tests pass | Steps 5-6 must precede Step 11 |
-| GitHub release notes empty | Step 10 — extract from CHANGELOG |
-| Git tag not pushed | Step 9 — push tag separately |
-| docs not reflecting new features | Update docs in same PR as the feature |
+| Mistake                                                   | Prevention                            |
+| --------------------------------------------------------- | ------------------------------------- |
+| Forgot to update `CURRENT_CLAWROUTER_VERSION` in blockrun | Step 4 — always check                 |
+| CHANGELOG entry missing or incomplete                     | Step 3 — write it before building     |
+| npm publish before tests pass                             | Steps 5-6 must precede Step 11        |
+| GitHub release notes empty                                | Step 10 — extract from CHANGELOG      |
+| Git tag not pushed                                        | Step 9 — push tag separately          |
+| docs not reflecting new features                          | Update docs in same PR as the feature |

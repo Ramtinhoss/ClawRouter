@@ -13,7 +13,7 @@ All notable changes to ClawRouter.
 
 ## v0.12.24 — Mar 8, 2026
 
-- **Preserve user-defined blockrun/* allowlist entries** — `injectModelsConfig()` no longer removes user-added `blockrun/*` allowlist entries on gateway restarts
+- **Preserve user-defined blockrun/\* allowlist entries** — `injectModelsConfig()` no longer removes user-added `blockrun/*` allowlist entries on gateway restarts
 
 ---
 

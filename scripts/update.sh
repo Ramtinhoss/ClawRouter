@@ -100,6 +100,15 @@ try {
 echo "→ Installing latest ClawRouter..."
 openclaw plugins install @blockrun/clawrouter
 
+# ── Step 4b: Ensure all dependencies are installed ────────────
+# openclaw's plugin installer may skip native/optional deps like @solana/kit.
+# Run npm install in the plugin directory to fill any gaps.
+PLUGIN_DIR="$HOME/.openclaw/extensions/clawrouter"
+if [ -d "$PLUGIN_DIR" ] && [ -f "$PLUGIN_DIR/package.json" ]; then
+  echo "→ Installing dependencies (Solana, x402, etc.)..."
+  (cd "$PLUGIN_DIR" && npm install --omit=dev 2>&1 | tail -1)
+fi
+
 # ── Step 5: Verify wallet survived ─────────────────────────────
 echo ""
 echo "→ Verifying wallet integrity..."

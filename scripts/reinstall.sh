@@ -203,6 +203,14 @@ if [ ! -f "$DIST_PATH" ]; then
 fi
 echo "  ✓ dist/index.js verified"
 
+# 6.1b. Ensure all dependencies are installed (Solana, x402, etc.)
+# openclaw's plugin installer may skip native deps like @solana/kit.
+PLUGIN_DIR="$HOME/.openclaw/extensions/clawrouter"
+if [ -d "$PLUGIN_DIR" ] && [ -f "$PLUGIN_DIR/package.json" ]; then
+  echo "→ Installing dependencies (Solana, x402, etc.)..."
+  (cd "$PLUGIN_DIR" && npm install --omit=dev 2>&1 | tail -1)
+fi
+
 # 6.2. Populate model allowlist so top BlockRun models appear in /model picker
 echo "→ Populating model allowlist..."
 node -e "
